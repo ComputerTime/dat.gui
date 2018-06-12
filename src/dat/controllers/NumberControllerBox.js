@@ -101,6 +101,13 @@ class NumberControllerBox extends NumberController {
         onFinish();
       }
     });
+    
+    dom.bind(_this2.__input, 'input', function (e) {
+      var attempted = parseFloat(e.target.value);
+	      if (!Common.isNaN(attempted)) {
+          _this.setValue(attempted);
+        }
+    });
 
     this.updateDisplay();
 
